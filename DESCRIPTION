@@ -13,3 +13,4 @@ Suggests:
     testthat
 Imports: 
     ggplot2
+RoxygenNote: 7.1.0
