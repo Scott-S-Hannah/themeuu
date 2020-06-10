@@ -40,7 +40,7 @@ themeuu::ulster_palettes
 
 ```
 
-here are some examples if the two main colour schemes:
+Here is an example of the `scale_color_ulster()` function with the default colour scheme:
 
 ```{r plots, echo = FALSE}
 library(ggplot2)
@@ -49,28 +49,37 @@ ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   scale_color_ulster(discrete = TRUE, palette = "main_1") +
   theme_light() +
   labs(title = "main_1 colour scheme")
+```
 
-ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+
+`themeuu` possess several colour schemes:
+```{r panel plot}
+p1 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
   scale_color_ulster(discrete = TRUE, palette = "main_2") +
   theme_light() +
   labs(title = "main_2 colour scheme")
 
-ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+p2 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
   scale_color_ulster(discrete = TRUE, palette = "mixed") +
   theme_light() +
   labs(title = "mixed colour scheme")
 
-ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+p3 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
   scale_color_ulster(discrete = TRUE, palette = "cool") +
   theme_light() +
   labs(title = "cool colour scheme")
 
-ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+p4 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
   scale_color_ulster(discrete = TRUE, palette = "hot") +
   theme_light() +
   labs(title = "hot colour scheme")
+
+library(patchwork)
+p1 + p2 + p3 + p4 +
+  patchwork::plot_layout(guides = "collect")
 ```
+
