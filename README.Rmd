@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# themeuu
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of themeuu is to provide a easy
+
+## Installation
+
+themeuu can be installed from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Scott-S-Hannah/themeuu")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(themeuu)
+## basic example code
+themeuu::ulster_palettes
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+  geom_point(size = 2) +
+  scale_color_ulster(discrete = TRUE, palette = "main_1") +
+  theme_light()
+
+ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
+  geom_point(size = 2) +
+  scale_color_ulster(discrete = TRUE, palette = "main_2") +
+  theme_light()
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
