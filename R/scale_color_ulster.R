@@ -1,4 +1,3 @@
-library(ggplot2)
 # Ulster University Style Guide
 # UU Colours
 ulster_colour <- c (`core blue` = "#041E42",
@@ -51,12 +50,12 @@ ulster_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
-ulster_pal <- function(palette = "main", reverse = FALSE, ...) {
+ulster_pal <- function(palette = "main_1", reverse = FALSE, ...) {
   pal <- ulster_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 }
 
 #' Color scale constructor for ulster colors
@@ -71,9 +70,9 @@ scale_color_ulster <- function(palette = "main", discrete = TRUE, reverse = FALS
   pal <- ulster_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("ulster_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("ulster_", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -89,9 +88,9 @@ scale_fill_ulster <- function(palette = "main", discrete = TRUE, reverse = FALSE
   pal <- ulster_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("ulster_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("ulster_", palette), palette = pal, ...)
   } else {
-    scale_fill_gradientn(colours = pal(256), ...)
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }
 
