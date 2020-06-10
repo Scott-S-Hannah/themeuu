@@ -1,17 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# themeuu
+# themeuu 🐦🎨
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of themeuu is to provide a easy
+The goal of `themeuu` is to provide a easy style guide that adheres to
+[Ulster University’s branding
+criteria](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf).
 
 ## Installation
 
-themeuu can be installed from [GitHub](https://github.com/) with:
+`themeuu` can be installed from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -20,7 +22,9 @@ devtools::install_github("Scott-S-Hannah/themeuu")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+`themeuu` possesses several colour scales that adhere to [Ulster
+University’s style
+guide](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf).
 
 ``` r
 library(themeuu)
@@ -51,12 +55,6 @@ themeuu::ulster_palettes
 #>  "#000000"  "#c6d1d6"  "#5e6d77"
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+here are some examples if the two main colour schemes:
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" /><img src="man/figures/README-pressure-2.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+<img src="man/figures/README-plots-1.png" width="100%" /><img src="man/figures/README-plots-2.png" width="100%" /><img src="man/figures/README-plots-3.png" width="100%" /><img src="man/figures/README-plots-4.png" width="100%" /><img src="man/figures/README-plots-5.png" width="100%" />
