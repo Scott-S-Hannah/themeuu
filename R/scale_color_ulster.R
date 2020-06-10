@@ -93,4 +93,3 @@ scale_fill_ulster <- function(palette = "main", discrete = TRUE, reverse = FALSE
     ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }
-
