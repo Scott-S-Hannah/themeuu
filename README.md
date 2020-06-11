@@ -7,8 +7,8 @@
 
 <!-- badges: end -->
 
-The goal of `themeuu` is to provide a easy style guide that adheres to
-[Ulster University’s branding
+The goal of `themeuu` is to provide an easy to use style guide that
+adheres to [Ulster University’s branding
 criteria](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf).
 
 ## Installation
@@ -22,9 +22,11 @@ devtools::install_github("Scott-S-Hannah/themeuu")
 
 ## Example
 
-`themeuu` possesses several colour scales that adhere to [Ulster
-University’s style
+`themeuu` currently possesses several colour scales that adhere to
+[Ulster University’s style
 guide](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf).
+Other features such as a ggplot2 theme that uses Ulster University’s
+typography etc. will be added shortly.
 
 ``` r
 library(themeuu)
@@ -61,35 +63,4 @@ default colour scheme:
 <img src="man/figures/README-plots-1.png" width="100%" />
 
 `themeuu` possess several colour schemes:
-
-``` r
-p1 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
-  geom_point(size = 2) +
-  scale_color_ulster(discrete = TRUE, palette = "main_2") +
-  theme_light() +
-  labs(title = "main_2 colour scheme")
-
-p2 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
-  geom_point(size = 2) +
-  scale_color_ulster(discrete = TRUE, palette = "mixed") +
-  theme_light() +
-  labs(title = "mixed colour scheme")
-
-p3 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
-  geom_point(size = 2) +
-  scale_color_ulster(discrete = TRUE, palette = "cool") +
-  theme_light() +
-  labs(title = "cool colour scheme")
-
-p4 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
-  geom_point(size = 2) +
-  scale_color_ulster(discrete = TRUE, palette = "hot") +
-  theme_light() +
-  labs(title = "hot colour scheme")
-
-library(patchwork)
-p1 + p2 + p3 + p4 +
-  patchwork::plot_layout(guides = "collect")
-```
-
-<img src="man/figures/README-panel plot-1.png" width="100%" />
+<img src="man/figures/README-panel-1.png" width="100%" />

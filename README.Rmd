@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `themeuu` is to provide a easy style guide that adheres to [Ulster University's branding criteria](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf). 
+The goal of `themeuu` is to provide an easy to use style guide that adheres to [Ulster University's branding criteria](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf). 
 
 ## Installation
 
@@ -31,13 +31,12 @@ devtools::install_github("Scott-S-Hannah/themeuu")
 ```
 ## Example
 
-`themeuu` possesses several colour scales that adhere to [Ulster University's style guide](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf). 
+`themeuu` currently possesses several colour scales that adhere to [Ulster University's style guide](https://www.ulster.ac.uk/__data/assets/pdf_file/0008/391058/UU-Brand-Guidelines-April-2019.pdf). Other features such as a ggplot2 theme that uses Ulster University's typography etc. will be added shortly.
 
 ```{r example}
 library(themeuu)
 ## basic example code
 themeuu::ulster_palettes
-
 ```
 
 Here is an example of the `scale_color_ulster()` function with the default colour scheme:
@@ -53,7 +52,7 @@ ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
 
 
 `themeuu` possess several colour schemes:
-```{r panel plot}
+```{r panel, echo=FALSE}
 p1 <- ggplot(iris, aes(x = Sepal.Width, Sepal.Length, colour = Species)) +
   geom_point(size = 2) +
   scale_color_ulster(discrete = TRUE, palette = "main_2") +
@@ -82,4 +81,3 @@ library(patchwork)
 p1 + p2 + p3 + p4 +
   patchwork::plot_layout(guides = "collect")
 ```
-
