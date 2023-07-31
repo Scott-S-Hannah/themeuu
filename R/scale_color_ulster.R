@@ -1,20 +1,22 @@
 # Ulster University Style Guide
 # UU Colours
-ulster_colour <- c (`core blue` = "#041E42",
-                    `deep blue` = "#151F6D",
-                    `bright blue` = "#009FDF",
-                    `sky blue` = "#00B5E2",
-                    `gold` = "#bba461",
-                    `black` = "#000000",
-                    `dark grey` = "#5e6d77",
-                    `light grey` = "#c6d1d6",
-                    `bright orange` = "#f39521",
-                    `full orange` = "#e35205",
-                    `pink` = "#e56c92",
-                    `red` = "#b90745",
-                    `purple` = "#692759",
-                    `teal` = "#00968c",
-                    `green` = "#78ad2b")
+ulster_colour <- c(
+  `core blue` = "#041E42",
+  `deep blue` = "#151F6D",
+  `bright blue` = "#009FDF",
+  `sky blue` = "#00B5E2",
+  `gold` = "#bba461",
+  `black` = "#000000",
+  `dark grey` = "#5e6d77",
+  `light grey` = "#c6d1d6",
+  `bright orange` = "#f39521",
+  `full orange` = "#e35205",
+  `pink` = "#e56c92",
+  `red` = "#b90745",
+  `purple` = "#692759",
+  `teal` = "#00968c",
+  `green` = "#78ad2b"
+)
 
 #' Function to extract ulster colors as hex codes
 #'
@@ -24,7 +26,7 @@ ulster_cols <- function(...) {
   cols <- c(...)
 
   if (is.null(cols))
-    return (ulster_colour)
+    return(ulster_colour)
 
   ulster_colour[cols]
 }
@@ -50,10 +52,13 @@ ulster_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
-ulster_pal <- function(palette = "main_1", reverse = FALSE, ...) {
+ulster_pal <- function(palette = "main_1",
+                       reverse = FALSE,
+                       ...) {
   pal <- ulster_palettes[[palette]]
 
-  if (reverse) pal <- rev(pal)
+  if (reverse)
+    pal <- rev(pal)
 
   grDevices::colorRampPalette(pal, ...)
 }
@@ -66,15 +71,19 @@ ulster_pal <- function(palette = "main_1", reverse = FALSE, ...) {
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_color_ulster <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- ulster_pal(palette = palette, reverse = reverse)
+scale_color_ulster <-
+  function(palette = "main",
+           discrete = TRUE,
+           reverse = FALSE,
+           ...) {
+    pal <- ulster_pal(palette = palette, reverse = reverse)
 
-  if (discrete) {
-    ggplot2::discrete_scale("colour", paste0("ulster_", palette), palette = pal, ...)
-  } else {
-    ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    if (discrete) {
+      ggplot2::discrete_scale("colour", paste0("ulster_", palette), palette = pal, ...)
+    } else {
+      ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    }
   }
-}
 
 #' Fill scale constructor for ulster colors
 #'
@@ -84,12 +93,16 @@ scale_color_ulster <- function(palette = "main", discrete = TRUE, reverse = FALS
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_fill_ulster <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- ulster_pal(palette = palette, reverse = reverse)
+scale_fill_ulster <-
+  function(palette = "main",
+           discrete = TRUE,
+           reverse = FALSE,
+           ...) {
+    pal <- ulster_pal(palette = palette, reverse = reverse)
 
-  if (discrete) {
-    ggplot2::discrete_scale("fill", paste0("ulster_", palette), palette = pal, ...)
-  } else {
-    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+    if (discrete) {
+      ggplot2::discrete_scale("fill", paste0("ulster_", palette), palette = pal, ...)
+    } else {
+      ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+    }
   }
-}
